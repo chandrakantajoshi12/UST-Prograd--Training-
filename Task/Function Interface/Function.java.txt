@@ -1,0 +1,33 @@
+
+@FunctionalInterface
+interface Addable{
+    public int add (int a, int b);
+}
+
+class Function {
+    public static void main(String[] args) {
+        Addable addable = (int a, int b)-> {
+            return (a+b);
+        };
+        System.out.println("Add: ");
+        System.out.println(addable.add(10, 4));
+
+        addable = (int a, int b)-> {
+            return (a-b);
+        };
+        System.out.println("Sub: ");
+        System.out.println(addable.add(9, 2));
+
+        addable = (int a, int b)-> {
+            return (a*b);
+        };
+        System.out.println("Multi: ");
+        System.out.println(addable.add(8,8));
+
+        addable = (int a, int b)-> {
+            return (a/b);
+        };
+        System.out.println("Div: ");
+        System.out.println(addable.add(10,2));
+    }
+}
