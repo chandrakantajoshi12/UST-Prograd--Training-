@@ -1,0 +1,10 @@
+public class America  implements Dress{
+
+    public void Type() {
+        System.out.println("Jeans & T-Shirt");
+    }
+
+    public void culture() {
+        System.out.println("American");
+    }
+}

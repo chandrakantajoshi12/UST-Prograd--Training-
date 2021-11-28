@@ -1,0 +1,11 @@
+public class country {
+    public static  void  main(String[] args){
+        Dress In = new  India();
+        Dress Us= new America();
+        In.culture();
+        In.Type();
+        Us.culture();
+        Us.Type();
+    }
+
+}

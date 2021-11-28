@@ -1,0 +1,10 @@
+public class India implements Dress {
+    public void Type() {
+        System.out.println("Saree , Salwar Kurta ");
+    }
+
+
+    public void culture() {
+        System.out.println("Indian");
+    }
+}
