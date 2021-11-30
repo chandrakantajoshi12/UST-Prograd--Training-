@@ -11,10 +11,14 @@
      public class reverse {
          public static void main(String[] args) {
 
-             Array prints = new Array();
+             Array<String> prints = new Array();
+
+             Array<Integer> printInt = new Array();
              Integer[] intarray = {1, 2, 3, 4};
+
              String[] strings = {"hey","hello","what"};
-             prints.printArray(intarray);
+
+             printInt.printArray(intarray);
              prints.printArray(strings);
 
              System.out.println("After Revese ");
