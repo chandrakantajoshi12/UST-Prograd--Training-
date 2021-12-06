@@ -1,0 +1,2 @@
+2. Online shopping portal. Customer uses shopping portal to make purchases online.
+ Customer should be able to view items, register in the portal and make purchases.

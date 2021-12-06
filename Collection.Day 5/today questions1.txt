@@ -1,0 +1,2 @@
+Write a code to implement (Banking application/library management/Employee managment) .Basic details should be stored in the file.Code should be a menu driven program to view the existing details, add new details, update existing details.Read/Add/Update details should be performed in the file.
+3. Railway reservation system.This system should enable a customer to enquire ticket availability, book and cancel tickets and also print tickets. Clerk should be able to print the tickets, process the cancellation by refunding the payment.
