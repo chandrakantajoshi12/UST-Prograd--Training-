@@ -14,16 +14,27 @@ public class NoteKeeper {
     ArrayList<String > removeList = new ArrayList<>();
     PriorityQueue<String> todoList = new PriorityQueue<>();
 
-    public  void  addList(String item , boolean completedOrNotCompleted){
-        if(completedOrNotCompleted){
-            todoListCompleted.add(item);
-            todoList.addAll(todoListCompleted);
-        }else{
-
-            todoListNotCompleted.add(item);
-            todoList.addAll(todoListNotCompleted);
-        }
+    public  PriorityQueue<String> addList(String item){
+        todoList.add(item);
+        return  todoList ;
+        //addList();
     }
+
+    public  void completedOrNotCompletedList(String item , boolean completedOrNotCompleted){
+        String 
+         for(String List:todoList) {
+             if (List == item && completedOrNotCompleted==true) {
+                 todoListCompleted.add(item);
+               //  completedOrNotCompleted==true;
+                 // todoList.addAll(todoListCompleted);
+             } else if(List == item && completedOrNotCompleted==false) {
+                 todoListNotCompleted.add(item);
+                 //  todoList.addAll(todoListNotCompleted);
+             }
+         }
+
+    }
+
     public  String checkList(String item){
         String existingItem = null;
         for(String list : todoList){
@@ -46,7 +57,7 @@ public class NoteKeeper {
         todoList.addAll(removeList);
         return todoList;
   }
-  public  boolean comletedOrNotCompleted(String completedOrNotCompletedList){
+  public  boolean completedOrNotCompleted(String completedOrNotCompletedList){
         boolean task = false;
         for(String list : todoListCompleted){
             if(list == completedOrNotCompletedList){
@@ -60,4 +71,5 @@ public class NoteKeeper {
         }
         return  task;
   }
+
 }

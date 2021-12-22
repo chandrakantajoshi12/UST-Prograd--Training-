@@ -1,23 +1,31 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-import java.util.PrimitiveIterator;
 import java.util.PriorityQueue;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class NoteKeeperTest {
     NoteKeeper noteKeeper = new NoteKeeper();
-   @BeforeEach
-    public  void addItem(){
-       noteKeeper.addList("Homework",true);
-       noteKeeper.addList("Assignment" , false);
-       noteKeeper.addList("Exercise Daily" , true);
-       noteKeeper.addList("Sleep on Time" , false);
+//   @BeforeEach
+//    public  void addItemCompletedOrNotCompleted(){
+//       noteKeeper.completedOrNotCompletedList("Homework");
+//       noteKeeper.completedOrNotCompletedList("Assignment"  );
+//       noteKeeper.completedOrNotCompletedList("Exercise Daily");
+//       noteKeeper.completedOrNotCompletedList("Sleep on Time" );
+//   }
+   @Test
+   public void addItem(){
+       PriorityQueue actualList = noteKeeper.addList("Breakfast");
+        PriorityQueue expectedList = new PriorityQueue(List.of("Breakfast"));
+          assertEquals(expectedList,actualList);
    }
+    @Test
+    public  void  completedOrNotCompletedList(){
+         noteKeeper.completedOrNotCompletedList("Homework",true);
+    }
    @Test
     public void addItemInTodoList(){
        String actualList= noteKeeper.checkList("Homework");
@@ -39,12 +47,12 @@ class NoteKeeperTest {
    public  class toggleBetweenCompletedAndNotCompletedToDoList{
        @Test
        public  void checkIfTaskIsCompleted(){
-           boolean actualList = noteKeeper.comletedOrNotCompleted("Homework");
+           boolean actualList = noteKeeper.completedOrNotCompleted("Homework");
            assertEquals(true,actualList);
        }
        @Test
        public  void checkIfTaskIsNotCompleted(){
-           boolean actualList = noteKeeper.comletedOrNotCompleted("Assignment");
+           boolean actualList = noteKeeper.completedOrNotCompleted("Assignment");
            assertEquals(false,actualList);
        }
    }
