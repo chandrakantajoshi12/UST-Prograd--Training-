@@ -3,14 +3,13 @@ package com.example.Calculator;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
      @Component
-public class Calculator {
+  public class Calculator {
+         @Value("${calc.value1}")
          double value1;
+         @Value("${calc.value2}")
         double value2;
 
-        public Calculator(@Value("${calc.value1}") double value1 , @Value("${calc.value2}")double value2) {
-            this.value1 = value1;
-            this.value2= value2;
-        }
+
         public  double getValue1(){
             return value1;
         }
