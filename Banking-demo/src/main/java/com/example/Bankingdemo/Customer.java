@@ -20,6 +20,18 @@ public class Customer {
 //   this.phoneNo=phoneNo;
 //   this.accountNo=accountNo;
 //   }
+    public  String getCustomerName(){
+        return customerName ;
+    }
+    public  String getCustomerID(){
+            return customerID;
+}
+   public  String getAddress(){
+        return  address;
+   }
+    public  long getMobile(){
+        return  mobile;
+    }
    public  void setCustomerName(String customerName){
      this.customerName = customerName;
 

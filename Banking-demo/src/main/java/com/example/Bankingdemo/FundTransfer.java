@@ -21,3 +21,6 @@ public class FundTransfer {
         }
     }
 }
+//    To avail online services of the bank, the customers have to log in to the website by using their
+//        username and password. After the customers successfully log into the website,
+//        they can view their account details on the user account page
