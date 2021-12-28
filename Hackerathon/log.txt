@@ -1,6 +1,6 @@
-Dec 24, 2021 12:09:30 PM Currency main
+Dec 28, 2021 7:04:02 PM Currency main
 INFO: Program Currency
-Dec 24, 2021 12:09:51 PM Currency main
-INFO: Converted Amount :15.0
-Dec 24, 2021 12:09:51 PM Currency main
-INFO: Converted Amount :15.0
+Dec 28, 2021 7:04:11 PM Currency main
+INFO: Converted Amount :100.0
+Dec 28, 2021 7:04:11 PM Currency main
+INFO: Converted Amount :100.0
