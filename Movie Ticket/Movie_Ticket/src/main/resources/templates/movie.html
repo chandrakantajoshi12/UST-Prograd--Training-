@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie</title>
+
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="row mt-4 p-2">
+        <h3>Movie</h3></div>
+    <table class="table table-bordered table-striped">
+    <thead class="table-dark">
+    <tr>
+        <th scope="col">Movie ID</th>
+        <th scope="col">Language</th>
+        <th scope="col">Movie Name</th>
+        <th scope="col">Rate</th>
+        <th scope="col">Date</th>
+
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr th:each='movie : ${movies}'>
+        <td th:text ='${movie.movieId}'></td>
+        <td th:text='${movie.language}'></td>
+        <td th:text='${movie.name}'></td>
+        <td th:text='${movie.rating}'></td>
+        <td th:text='${movie.releaseDate}'></td>
+
+        <td><a class="btn btn-primary" type="submit" th:href="@{/movie/{movieId} (movieId=${movie.movieId})}">Book Ticket</a>
+        </td>
+    </tr>
+    </tbody>
+<!--    <tr>-->
+<!--        <th scope="row">2</th>-->
+<!--        <td>Jacob</td>-->
+<!--        <td>Thornton</td>-->
+<!--        <td>@fat</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <th scope="row">3</th>-->
+<!--        <td colspan="2">Larry the Bird</td>-->
+<!--        <td>@twitter</td>-->
+<!--    </tr>-->
+
+</table>
+</div>
+</body>
+</html>
+
