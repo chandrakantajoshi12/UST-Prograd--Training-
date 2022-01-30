@@ -1,37 +1,33 @@
 package com.example.Movie_Ticket.entity;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
 public class Ticket {
     @Id
-    @GeneratedValue(generator = "uuid")
-    private  Integer ticketId;
-    @Column(nullable = false)
-    private  String userName;
-    @Column(nullable = false)
-    private  Integer noOfSeats;
+    @GeneratedValue
+    private Long ticketId;
+    private Integer numberOfAvailableSeats;
 
-    public  Ticket(){}
-
-    public Ticket(String userName, Integer noOfSeats) {
-        this.userName = userName;
-        this.noOfSeats = noOfSeats;
+    public Ticket(Integer numberOfAvailableSeats) {
+        this.numberOfAvailableSeats = numberOfAvailableSeats;
     }
 
-    public String getUserName() {
-        return userName;
+    public Long getTicketId() {
+        return ticketId;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setTicketId(Long ticketId) {
+        this.ticketId = ticketId;
     }
 
-    public Integer getNoOfSeats() {
-        return noOfSeats;
+    public Integer getNumberOfAvailableSeats() {
+        return numberOfAvailableSeats;
     }
 
-    public void setNoOfSeats(Integer noOfSeats) {
-        this.noOfSeats = noOfSeats;
+    public void setNumberOfAvailableSeats(Integer numberOfAvailableSeats) {
+        this.numberOfAvailableSeats = numberOfAvailableSeats;
     }
-     }
+}

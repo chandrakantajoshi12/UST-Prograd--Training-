@@ -5,37 +5,20 @@ import com.example.Movie_Ticket.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
-public  class CustomerService {
-
+public class CustomerService {
     @Autowired
-    private CustomerRepository repository;
-    private String emailId;
+    private CustomerRepository customerRepository;
 
-
-    public Customer save(Customer customer) {
-        return repository.save(customer);
+    public Customer createCustomer(Customer customer){
+        return customerRepository.save(customer);
     }
 
-
-    public Boolean exitsById(String emailId) {
-        return repository.existsById(emailId);
+    public Boolean existsById(String userName){
+        return customerRepository.existsById(userName);
     }
 
-
-    public Customer findByEmailId(String emailId) {
-        this.emailId = emailId;
-        return  repository.getById(emailId);
+    public Customer findCustomerByUserName(String userName){
+        return customerRepository.getById(userName);
     }
-
-
 }
-
-//    for (Movies movie : movieService.listAllMovies())
-//    {
-//        sout(movie);
-//    }
-
-

@@ -10,14 +10,12 @@ import java.util.List;
 @Service
 public class MovieService {
     @Autowired
-    MovieRepository repository;
+    private MovieRepository movieRepository;
 
-    public List<Movie> movieList() {
-        return  repository.findAll() ;
+    public List<Movie> movieList(){
+        return movieRepository.findAll();
     }
-
     public Movie getByMovieId(Long movieId){
-
-        return repository.getByMovieId(movieId);
+        return movieRepository.getById(movieId);
     }
 }

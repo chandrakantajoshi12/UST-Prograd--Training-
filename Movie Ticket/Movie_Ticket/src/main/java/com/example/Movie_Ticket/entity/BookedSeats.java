@@ -14,14 +14,12 @@ public class BookedSeats {
     private Long id;
     private String seats;
     private Double seatPrice;
-
     @JsonIgnore
     @ManyToOne
     private Customer customer;
-
     @JsonIgnore
     @ManyToOne
-    private ShowsMovie showsMovie;
+    private MovieShows movieShows;
 
 
     public BookedSeats() {
@@ -34,12 +32,12 @@ public class BookedSeats {
 
 
 
-    public ShowsMovie getShowsMovie() {
-        return showsMovie;
+    public MovieShows getMovieShows() {
+        return movieShows;
     }
 
-    public void setShowsMovie(ShowsMovie showsMovie) {
-        this.showsMovie = showsMovie;
+    public void setMovieShows(MovieShows movieShows) {
+        this.movieShows = movieShows;
     }
 
     public Double getSeatPrice() {
@@ -74,6 +72,6 @@ public class BookedSeats {
     public void setSeats(String seats) {
         this.seats = seats;
     }
+
+
 }
-
-

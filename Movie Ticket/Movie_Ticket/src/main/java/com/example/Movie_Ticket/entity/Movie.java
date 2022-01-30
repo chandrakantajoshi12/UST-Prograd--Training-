@@ -1,65 +1,44 @@
 package com.example.Movie_Ticket.entity;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.sql.Date;
 import java.util.List;
-
 
 @Entity
 public class Movie {
     @Id
-    @GeneratedValue(generator = "uuid")
+    @GeneratedValue
     private Long movieId;
-    @Column(nullable = false)
-    private  String name;
-   @Column(nullable = false)
-   private  Integer rating;
-    @Column(nullable = false)
+    private String movieName;
     private Date releaseDate;
-    @Column(nullable = false)
-    private  String language;
-   @OneToMany(mappedBy = "movie")
-   private List<ShowsMovie> showsMovie;
+    @OneToMany(mappedBy= "movie")
+    private List<MovieShows> movieShows;
 
-    public Movie( String name, Integer rating, Date releaseDate , String language) {
-//        this.movieId = movieId;
-        this.name = name;
-       this.rating = rating;
+    public Movie() {
+    }
+
+    public Movie(String movieName, Date releaseDate) {
+        this.movieName = movieName;
         this.releaseDate = releaseDate;
-        this.language= language;
-
     }
 
     public Long getMovieId() {
         return movieId;
     }
 
-    public void setMovieId(Long Id) {
+    public void setMovieId(Long movieId) {
         this.movieId = movieId;
     }
 
-    public String getName() {
-        return name;
+    public String getMovieName() {
+        return movieName;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getRating() {
-        return rating;
-    }
-
-    public String getLanguage() {
-        return language;
-    }
-
-    public void setLanguage(String language) {
-        this.language = language;
-    }
-
-    public void setRating(Integer rating) {
-        this.rating = rating;
+    public void setMovieName(String movieName) {
+        this.movieName = movieName;
     }
 
     public Date getReleaseDate() {
@@ -70,9 +49,11 @@ public class Movie {
         this.releaseDate = releaseDate;
     }
 
-
-
-    public Movie() {
+    public List<MovieShows> getShow() {
+        return movieShows;
     }
 
+    public void setShow(List<MovieShows> movieShows) {
+        this.movieShows = movieShows;
+    }
 }

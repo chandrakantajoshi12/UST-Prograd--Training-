@@ -1,30 +1,47 @@
 package com.example.Movie_Ticket.entity;
 
-
-import org.hibernate.annotations.GenericGenerator;
-
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Entity
 public class Customer {
-
-
     @Id
-    @Column(nullable = false)
-    private  String emailId;
-    @Column(nullable = false)
-    private  String userName;
-    @Column(nullable = false)
+    private String userName;
     private String name;
-    @Column(nullable = false)
-    private  String address;
-    @Column(nullable = false)
-    private  Double phone;
+    private String address;
+    @Column(unique = true)
+    private String password;
+    @OneToMany(mappedBy = "customer")
+    private List<BookedSeats> bookedSeats;
 
-    @Column(nullable = false)
-    private  String password;
+    public Customer() {
+    }
 
+    public Customer(String userName, String name, String address, String password) {
+        this.userName = userName;
+        this.name = name;
+        this.address = address;
+        this.password = password;
+    }
 
+    public List<BookedSeats> getBookedSeats() {
+        return bookedSeats;
+    }
+
+    public void setBookedSeats(List<BookedSeats> bookedSeats) {
+        this.bookedSeats = bookedSeats;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
     public String getName() {
         return name;
@@ -42,14 +59,6 @@ public class Customer {
         this.address = address;
     }
 
-    public String getEmailId() {
-        return emailId;
-    }
-
-    public void setEmailId(String emailId) {
-        this.emailId = emailId;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -57,28 +66,4 @@ public class Customer {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    public Double getPhone() {
-        return phone;
-    }
-
-    public void setPhone(Double phone) {
-        this.phone = phone;
-    }
-
-
-       public Customer() {
-//           this.customerId = customerId;
-       }
-
-       public Customer(String userName, String name, String address, Double phone, String emailId, String password) {
-        this.userName = userName;
-        this.name = name;
-        this.address = address;
-        this.emailId = emailId;
-        this.password = password;
-        this.phone = phone;
-    }
-
-
 }
