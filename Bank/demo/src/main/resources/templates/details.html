@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Details</title>
+</head>
+<body>
+<h1>Details Of Account </h1>
+
+  <ul class="nav-item">
+    <a class="nav-link active" aria-current="page" th:href="@{'/updateProfile/'+${customerId}}">UpdateProfile</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link active" aria-current="page"th:href="@{'/fundTransfer/'+${customerId}}">Fund Transfer</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" aria-current="page" th:href="@{'/deposit/'+${customerId}}">Deposite</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" th:href="@{'/withdraw/'+${customerId}}">Withdraw</a>
+</li>
+  </ul>
+
+<p>ID: <span th:text="${customerId}"/></p><br>
+<p>Name: <span th:text="${name}"/></p><br>
+<p >Address:<span th:text="${address}"/></p><br>
+<p>city: <span th:text="${city}"/></p><br>
+<p>Phone: <span th:text="${phone}"/></p><br>
+<p>AadharNumber: <span th:text="${aadharNumber}"/></p><br>
+<p>Account :<span th:text="${id}"/></p><br>
+<p >balance :<span th:text="${balance}"/></p><br>
+<p >branch :<span th:text="${branch}"/></p><br>
+<p >Email: <span th:text="${email}"/></p><br>
+<p >Password:<span th:text="${password}"/></p><br>
+<!--<a href="updateProfile.html" class="btn btn-primary">update Profile</a>-->
+<!--<a href="deposite.html" class="btn btn-primary">Deposite</a>-->
+<!--<a href="withdraw.html" class="btn btn-primary">Withdraw</a>-->
+
+</body>
+</html>
